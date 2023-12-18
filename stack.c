@@ -101,3 +101,48 @@ void pop(stack_t **head, unsigned int linecounter)
 	*head = (*head)->next;
 	free (temp);
 }
+
+/**
+ * swap - swaps top and last before top elements
+ * @head: double pointer to head
+ * @linecounter: number of line
+ * Return: none
+*/
+void swap(stack_t **head, unsigned int linecounter)
+{
+	int temp;
+
+	if (*head == NULL || (*head)->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't swap, stack too short\n", linecounter);
+		exit(EXIT_FAILURE);
+	}
+	temp = (*head)->n;
+	(*head)->n = (*head)->next->n;
+	(*head)->next->n = temp;
+}
+
+
+/**
+ * add - adds last and last before top element 
+ * and removes head assigning sum data to last before head
+ * @head: double pointer to head
+ * @linecounter: number of line
+ * Return: none
+*/
+void add(stack_t **head, unsigned int linecounter)
+{
+	int sum;
+	stack_t *temp;
+
+	if (*head == NULL)
+	{
+		fprintf(stderr, "L%d: can't add, stack too short\n", linecounter);
+		exit(EXIT_FAILURE);
+	}
+	sum = (*head)->n + (*head)->next->n;
+	temp = *head;
+	(*head) = (*head)->next;
+	(*head)->n = sum;
+	free (temp);
+}
