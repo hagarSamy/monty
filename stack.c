@@ -159,3 +159,27 @@ void nop(stack_t **head, unsigned int linecounter)
 	(void)head;
 	(void)linecounter;
 }
+
+/**
+ * sub - subtracts last and last before top element 
+ * and removes head assigning sum data to last before head
+ * @head: double pointer to head
+ * @linecounter: number of line
+ * Return: none
+*/
+void sub(stack_t **head, unsigned int linecounter)
+{
+	int subt;
+	stack_t *temp;
+
+	if (*head == NULL || (*head)->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't add, stack too short\n", linecounter);
+		exit(EXIT_FAILURE);
+	}
+	subt = (*head)->next->n - (*head)->n;
+	temp = *head;
+	(*head) = (*head)->next;
+	(*head)->n = subt;
+	free (temp);
+}
