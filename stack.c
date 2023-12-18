@@ -81,3 +81,23 @@ void pint(stack_t **head, unsigned int linecounter)
 	}
 	printf("%d\n", (*head)->n);
 }
+
+/**
+ * pop - removes top element of the stack
+ * @head: double pointer to head
+ * @linecounter: number of line
+ * Return: none
+*/
+void pop(stack_t **head, unsigned int linecounter)
+{
+	stack_t *temp;
+
+	if (*head == NULL)
+	{
+		fprintf(stderr, "L%d: can't pop an empty stack\n", linecounter);
+		exit(EXIT_FAILURE);
+	}
+	temp = *head;
+	*head = (*head)->next;
+	free (temp);
+}
