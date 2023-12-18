@@ -46,5 +46,7 @@ void pall(stack_t **head, unsigned int linecounter);
 void free_stack(stack_t **firstnode);
 void pint(stack_t **head, unsigned int linecounter);
 void pop(stack_t **head, unsigned int linecounter);
+void swap(stack_t **head, unsigned int linecounter);
+void add(stack_t **head, unsigned int linecounter);
 
 #endif
