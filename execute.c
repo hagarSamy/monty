@@ -17,6 +17,7 @@ int execute(char *opcodeline, unsigned int linecounter, stack_t **firstnode)
 		{"pop", pop},
 		{"swap", swap},
 		{"add", add},
+		{"nop", nop},
 		{NULL, NULL}
 	};
 	char *realopcode;
