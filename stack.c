@@ -146,3 +146,16 @@ void add(stack_t **head, unsigned int linecounter)
 	(*head)->n = sum;
 	free (temp);
 }
+
+
+/**
+ * nop - doesn't do anything
+ * @head: double pointer to head
+ * @linecounter: number of line
+ * Return: none
+*/
+void nop(stack_t **head, unsigned int linecounter)
+{
+	(void)head;
+	(void)linecounter;
+}
