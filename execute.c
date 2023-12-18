@@ -13,6 +13,7 @@ int execute(char *opcodeline, unsigned int linecounter, stack_t **firstnode)
 	instruction_t opcodes[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
 		{NULL, NULL}
 	};
 	char *realopcode;
