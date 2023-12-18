@@ -49,5 +49,6 @@ void pop(stack_t **head, unsigned int linecounter);
 void swap(stack_t **head, unsigned int linecounter);
 void add(stack_t **head, unsigned int linecounter);
 void nop(stack_t **head, unsigned int linecounter);
+void sub(stack_t **head, unsigned int linecounter);
 
 #endif
