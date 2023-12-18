@@ -174,7 +174,7 @@ void sub(stack_t **head, unsigned int linecounter)
 
 	if (*head == NULL || (*head)->next == NULL)
 	{
-		fprintf(stderr, "L%d: can't add, stack too short\n", linecounter);
+		fprintf(stderr, "L%d: can't sub, stack too short\n", linecounter);
 		exit(EXIT_FAILURE);
 	}
 	subt = (*head)->next->n - (*head)->n;
