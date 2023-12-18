@@ -17,14 +17,14 @@ void push(stack_t **head, unsigned int linecounter)
 	expectedint = strtok(NULL, " \t\n");
 	if (expectedint == NULL)
 	{
-		fprintf(stderr, "L%d: useage: push integer\n", linecounter);
+		fprintf(stderr, "L%d: usage: push integer\n", linecounter);
 		exit(EXIT_FAILURE);
 	}
 	while (expectedint[i] != '\0')
 	{
 		if (expectedint[i] != '-' && !isdigit(expectedint[i]))
 		{
-			fprintf(stderr, "L%d: useage: push integer\n", linecounter);
+			fprintf(stderr, "L%d: usage: push integer\n", linecounter);
 			exit(EXIT_FAILURE);
 		}
 		i++;
