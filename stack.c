@@ -65,3 +65,19 @@ void pall(stack_t **head, unsigned int linecounter)
 		temp = temp->next;
 	}
 }
+
+/**
+ * pint - prints top element of the stack
+ * @head: double pointer to head
+ * @linecounter: number of line
+ * Return: none
+*/
+void pint(stack_t **head, unsigned int linecounter)
+{
+	if (*head == NULL)
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", linecounter);
+		exit(EXIT_FAILURE);
+	}
+	printf("%d\n", (*head)->n);
+}
