@@ -202,7 +202,7 @@ void div(stack_t **head, unsigned int linecounter)
 	}
 	if ((*head)->n == 0)
 	{
-		fprintf(stderr, "division by zero\n");
+		fprintf(stderr, "L%d: division by zero\n", linecounter);
 		exit(EXIT_FAILURE);
 	}
 	divs = (*head)->next->n / (*head)->n;
