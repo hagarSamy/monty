@@ -2,12 +2,14 @@
 #define MONTY_H
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <sys/types.h>
 #include <unistd.h>
 #include <fcntl.h>
 #include <string.h>
 #include <ctype.h>
+#define div stdlib_div
+#include <stdlib.h>
+#undef div
 #include <limits.h>
 
 /**
@@ -50,5 +52,6 @@ void swap(stack_t **head, unsigned int linecounter);
 void add(stack_t **head, unsigned int linecounter);
 void nop(stack_t **head, unsigned int linecounter);
 void sub(stack_t **head, unsigned int linecounter);
+void div(stack_t **head, unsigned int linecounter);
 
 #endif
