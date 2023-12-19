@@ -262,3 +262,24 @@ void mod(stack_t **head, unsigned int linecounter)
 	(*head)->n = modu;
 	free (temp);
 }
+
+/**
+ * pchar - prints char at top of stack using n as ascii code
+ * @head: double pointer to head
+ * @linecounter: number of line
+ * Return: none
+ */
+void pchar(stack_t **head, unsigned int linecounter)
+{
+	if (*head == NULL || head == NULL)
+	{
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", linecounter);
+		exit(EXIT_FAILURE);
+	}
+	if ((*head)->n < 0 || (*head)->n > 127)
+	{
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", linecounter);
+		exit(EXIT_FAILURE);
+	}
+	printf("%c\n", (*head)->n);
+}

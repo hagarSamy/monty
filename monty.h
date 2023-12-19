@@ -55,5 +55,6 @@ void sub(stack_t **head, unsigned int linecounter);
 void div(stack_t **head, unsigned int linecounter);
 void mul(stack_t **head, unsigned int linecounter);
 void mod(stack_t **head, unsigned int linecounter);
+void pchar(stack_t **head, unsigned int linecounter);
 
 #endif
