@@ -235,3 +235,30 @@ void mul(stack_t **head, unsigned int linecounter)
 	(*head)->n = mult;
 	free (temp);
 }
+/**
+ *mod - computes the rest of the division of the second top element of the stack by the top element of the stack.
+ * @head: double pointer to head
+ * @linecounter: number of line
+ * Return: none
+*/
+void mod(stack_t **head, unsigned int linecounter)
+{
+	int modu;
+	stack_t *temp;
+
+	if (*head == NULL || (*head)->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't mod, stack too short\n", linecounter);
+		exit(EXIT_FAILURE);
+	}
+	if ((*head)->n == 0)
+	{
+		fprintf(stderr, "L%d: division by zero\n", linecounter);
+		exit(EXIT_FAILURE);
+	}
+	modu = (*head)->next->n % (*head)->n;
+	temp = *head;
+	(*head) = (*head)->next;
+	(*head)->n = modu;
+	free (temp);
+}
