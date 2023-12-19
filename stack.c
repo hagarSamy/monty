@@ -260,5 +260,5 @@ void mod(stack_t **head, unsigned int linecounter)
 	temp = *head;
 	(*head) = (*head)->next;
 	(*head)->n = modu;
-	free (emp);
+	free (temp);
 }
