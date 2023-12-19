@@ -22,6 +22,7 @@ int execute(char *opcodeline, unsigned int linecounter, stack_t **firstnode)
 		{"div", div},
 		{"mul", mul},
 		{"mod", mod},
+		{"pchar", pchar},
 		{NULL, NULL}
 	};
 	char *realopcode;
