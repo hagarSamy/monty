@@ -185,7 +185,7 @@ void sub(stack_t **head, unsigned int linecounter)
 }
 
 /**
- * div - dividess the second top element of the stack by the top element of the stack
+ * div - divides the second top element of the stack by the top element of the stack
  * @head: double pointer to head
  * @linecounter: number of line
  * Return: none
@@ -209,5 +209,29 @@ void div(stack_t **head, unsigned int linecounter)
 	temp = *head;
 	(*head) = (*head)->next;
 	(*head)->n = divs;
+	free (temp);
+}
+
+
+/**
+ * mul - multiplies the second top element of the stack with the top element of the stack
+ * @head: double pointer to head
+ * @linecounter: number of line
+ * Return: none
+*/
+void mul(stack_t **head, unsigned int linecounter)
+{
+	int mult;
+	stack_t *temp;
+
+	if (*head == NULL || (*head)->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't mul, stack too short\n", linecounter);
+		exit(EXIT_FAILURE);
+	}
+	mult = (*head)->next->n * (*head)->n;
+	temp = *head;
+	(*head) = (*head)->next;
+	(*head)->n = mult;
 	free (temp);
 }
